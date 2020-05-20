@@ -16,13 +16,15 @@ export class ProfileService {
   constructor() { }
 
   //methods 
-
+  //getter
   getUserProfile(): UserProfile {
     return this.user
   };
-
+  //setter
   setUserProfile(user: UserProfile): void {
     //right side is the parameter user. left side is the property (from the class)
+    //this profileservice's user. this refers to whichever class instance you're in
+    //changes this service user to be equal to whatever the user is from where you call this method in a component
     this.user = user
   }
 }

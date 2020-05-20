@@ -17,12 +17,17 @@ export class EditComponent implements OnInit {
   constructor(private router: Router, private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    //on init, update the user to use the method from the service
+    this.user = this.profileService.getUserProfile();
   }
 
   editProfile(form: NgForm): void {
     //the form would be the (editform) called in the edit.component.html this method is called there
     //with the parameter being the form reference id (to call the form)
     //then the following gives the new object with the new values pulled from the form
+    //updated a property with the following values
+
+    //made it type UserProfile
     this.user = {
       name: form.value.name,
       contact: form.value.contact,
@@ -31,7 +36,7 @@ export class EditComponent implements OnInit {
 
     //try this.user set to the whole object without using newUser
     // this.user = newUser;
-    //this.profileservice... 
+    //this.profileservice... updates the object
     this.profileService.setUserProfile(this.user);
     //moves back to profile component
     this.router.navigate(["profile"])

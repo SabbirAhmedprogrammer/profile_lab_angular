@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit {
   //the method retrieves the data, and puts it into the person property 
   //service is basically a new property with type ProfileService , just like line 14
   //inject (private anyName : classofService)
+  //service is an instance of a class, which means it is an OBJECT, which has methods
   constructor(private service: ProfileService) { }
 
   ngOnInit(): void {

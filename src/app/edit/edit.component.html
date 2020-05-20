@@ -1,9 +1,11 @@
+<!-- editForm takes a snapshot of the current status of the form, makes it into an object through editProfile -->
+<!-- one way data binding  []=""  used on the ngModel -->
 <form class="form" #editForm="ngForm" (ngSubmit)="editProfile(editForm)">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" ngModel>
+    <input type="text" id="name" name="name" [ngModel]="user.name">
     <label for="contact">Contact</label>
-    <input type="text" id="contact" name="contact" ngModel>
+    <input type="text" id="contact" name="contact" [ngModel]="user.contact">
     <label for="bio">Bio</label>
-    <input type="text" id="bio" name="bio" ngModel>
+    <input type="text" id="bio" name="bio" [ngModel]="user.bio">
     <button>Button</button>
 </form>
